@@ -36,13 +36,13 @@ def update_student(student_id:int,updated_student:Student):
     for index,student in enumerate(students):
         if student.id == student_id:
             students[index] = updated_student
-        return updated_student
+            return updated_student
     return {"error" : "student not found"}
-# put تحديث بيانات عنصر باستخدام
+# put حذف بيانات عنصر باستخدام
 @app.delete("/students/{student_id}")
 def delete_student(student_id:int):
     for index,student in enumerate(students):
         if student.id == student_id:
             del students[index]
-        return {"message" : "student deleted"}
+            return {"message" : "student deleted"}
     return {"error" : "student not found"}
